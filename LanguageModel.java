@@ -1,11 +1,12 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Random;
 
 public class LanguageModel {
 
     // The map of this model.
     // Maps windows to lists of charachter data objects.
-    HashMap<String, List> CharDataMap;
+    LinkedHashMap<String, List> CharDataMap;
 
     // The window length used in this model.
     int windowLength;
@@ -21,7 +22,7 @@ public class LanguageModel {
     public LanguageModel(int windowLength, int seed) {
         this.windowLength = windowLength;
         randomGenerator = new Random(seed);
-        CharDataMap = new HashMap<String, List>();
+        CharDataMap = new LinkedHashMap<>();
     }
 
     /**
@@ -32,7 +33,7 @@ public class LanguageModel {
     public LanguageModel(int windowLength) {
         this.windowLength = windowLength;
         randomGenerator = new Random();
-        CharDataMap = new HashMap<String, List>();
+        CharDataMap = new LinkedHashMap<>();
     }
 
     /** Builds a language model from the text in the given file (the corpus). */

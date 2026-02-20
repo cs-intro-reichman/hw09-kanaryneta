@@ -89,7 +89,7 @@ public class List {
             addFirst(chr);
         } else {
             CharData cp = get(index);
-            cp.count++;
+            cp.cnt++;
         }
 
     }

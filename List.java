@@ -49,19 +49,17 @@ public class List {
     public String toString() {
         if (size == 0)
             return "()";
-
         StringBuilder str = new StringBuilder("(");
         Node current = first;
-
         while (current != null) {
             str.append(current.cp.toString());
-            if (current.next != null)
+            if (current.next != null) {
                 str.append(" ");
+            }
             current = current.next;
         }
-
         str.append(")");
-        return "(" + str.toString() + ")";
+        return str.toString();
     }
 
     /**
@@ -130,7 +128,7 @@ public class List {
      * throws an IndexOutOfBoundsException.
      */
     public CharData get(int index) {
-        if (index < 0 || index >= size) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("there is no element " + index + " in this list");
         }
         Node current = first;

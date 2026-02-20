@@ -52,10 +52,12 @@ public class List {
         StringBuilder str = new StringBuilder("(");
         Node current = first;
         while (current != null) {
-            str.append(current.cp + "");
+            str.append(current.cp.toString());
+            if (current.next != null) {
+                str.append(" ");
+            }
             current = current.next;
         }
-        str.deleteCharAt(str.length() - 1);
         str.append(")");
         return str.toString();
     }
